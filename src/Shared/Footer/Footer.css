@@ -1,0 +1,15 @@
+.footer-links ul{
+    padding: 0;
+}
+.footer-links ul li {
+    list-style: none;
+    padding: 5px 0;
+}
+.footer-links ul li:hover a{
+    color:#04B4AE;
+}
+.footer-links ul li a {
+    text-decoration: none;
+    font-size: 18px;
+    color: black
+}
