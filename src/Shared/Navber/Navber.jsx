@@ -2,6 +2,7 @@
 import { Nav, Navbar } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import logo from '../../assets/logo.png'
+import ActiveLink from '../../Routes/ActiveLinks/ActiveLinks';
 import { Link } from 'react-router-dom';
 
 const Navber = () => {
@@ -12,13 +13,13 @@ const Navber = () => {
                     <Navbar.Toggle aria-controls="navbarScroll" />
                     <Navbar.Collapse id="navbarScroll">
                         <Nav className="mx-auto my-2 my-lg-0" >
-                            <Link className='text-decoration-none px-4' href="#action1">Home</Link >
-                            <Link className='text-decoration-none px-4' href="#action2">All Toys</Link >
-                            <Link className='text-decoration-none px-4' href="#action2">My Toys</Link >
-                            <Link className='text-decoration-none px-4' href="#action2">Add A Toy</Link >
-                            <Link className='text-decoration-none px-4' href="#action2">Blogs</Link >
+                            <ActiveLink className='text-decoration-none px-4' to="/">Home</ActiveLink >
+                            <ActiveLink className='text-decoration-none px-4' to="/alltoys">All Toys</ActiveLink >
+                            <ActiveLink className='text-decoration-none px-4' to="/mytoys">My Toys</ActiveLink >
+                            <ActiveLink className='text-decoration-none px-4' to="/addtoy">Add A Toy</ActiveLink >
+                            <ActiveLink className='text-decoration-none px-4' to="/blog">Blogs</ActiveLink >
                         </Nav>
-                        <button type="button" className="btn btn-primary">Login</button>
+                        <Link to='/login'><button type="button" className="btn btn-primary">Login</button></Link>
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
