@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import "./ActiveLinks.css"
 import { NavLink } from 'react-router-dom';
 

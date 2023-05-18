@@ -19,7 +19,7 @@ const Navber = () => {
                             <ActiveLink className='text-decoration-none px-4' to="/addtoy">Add A Toy</ActiveLink >
                             <ActiveLink className='text-decoration-none px-4' to="/blog">Blogs</ActiveLink >
                         </Nav>
-                        <Link to='/login'><button type="button" className="btn btn-primary">Login</button></Link>
+                        <Link to='/login'><button style={{color:'white',backgroundColor: '#04B4AE'}} type="button" className="btn fw-bold">Login</button></Link>
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
