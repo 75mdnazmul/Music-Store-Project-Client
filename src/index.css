@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* index.css */
+
+:root {
+    --color-primary: #ffffff; /* প্রাথমিক মান হচ্ছে সাদা */
+  }
+  :root {
+    --background-color: white;
+  }  
+  body {
+    background-color: var(--background-color);
+  }
+  
