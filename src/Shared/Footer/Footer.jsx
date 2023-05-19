@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import logo from '../../assets/logo.png'
+import logo from '../../assets/logo.webp'
 import { FaAddressBook, FaEnvelope, FaPhoneAlt, FaFacebookF, FaTwitter, FaInstagram, FaYoutube, FaPinterestP} from 'react-icons/fa';
 import './Footer.css'
 
