@@ -9,11 +9,11 @@ import { useContext } from 'react';
 import { AuthContext } from '../../Providers/AuthProviders';
 
 const Navber = () => {
-    const { user, logOut, name, photo} = useContext(AuthContext)
-    const handleLogOut = () =>{
+    const { user, logOut, name, photo } = useContext(AuthContext)
+    const handleLogOut = () => {
         logOut()
-        .then(()=>{})
-        .catch(error => console.error(error))
+            .then(() => { })
+            .catch(error => console.error(error))
     }
     return (
         <Navbar bg="light" expand="lg">
@@ -23,28 +23,31 @@ const Navber = () => {
                 <Navbar.Collapse id="navbarScroll">
                     <Nav className="mx-auto my-2 my-lg-0" >
                         <ActiveLink className='text-decoration-none px-4' to="/">Home</ActiveLink >
-                        <ActiveLink className='text-decoration-none px-4' to="/alltoys">All Toys</ActiveLink >
-                        <ActiveLink className='text-decoration-none px-4' to="/mytoys">My Toys</ActiveLink >
-                        <ActiveLink className='text-decoration-none px-4' to="/addtoy">Add A Toy</ActiveLink >
+                        <ActiveLink className='text-decoration-none px-4' to="/allToys">All Toys</ActiveLink >
+                        {
+                            user && <>
+                                <ActiveLink className='text-decoration-none px-4' to="/myToys">My Toys</ActiveLink >
+                                <ActiveLink className='text-decoration-none px-4' to="/addAToy">Add A Toy</ActiveLink ></>
+                        }
                         <ActiveLink className='text-decoration-none px-4' to="/blog">Blogs</ActiveLink >
                     </Nav>
                     {
                         user ? (
                             <>
-                                { photo ? (
+                                {photo ? (
                                     <img
                                         style={{ width: "40px" }}
-                                        title={name}
+                                        title={user.displayName || name}
                                         className="rounded-circle mx-2 border border-2 border-white"
-                                        src={photo}
+                                        src={user.photoURL || photo}
                                         alt="Profile photo"
                                     />
                                 ) : (
                                     <img
                                         style={{ width: "40px" }}
-                                        title={name}
+                                        title={user.displayName || name}
                                         className="rounded-circle mx-2 border border-2 border-white"
-                                        src={profile_pic}
+                                        src={user.photoURL || profile_pic}
                                         alt="Profile photo"
                                     />
                                 )}

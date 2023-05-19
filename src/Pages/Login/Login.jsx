@@ -2,7 +2,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import img from '../../assets/login.webp'
 import { FaGithub, FaGoogle } from 'react-icons/fa';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useContext, useState } from 'react';
 import { AuthContext } from '../../Providers/AuthProviders';
 
@@ -10,6 +10,9 @@ const Login = () => {
     const [error, setError] = useState("")
     const [success, setSuccess] = useState("")
     const navigate = useNavigate();
+    const location = useLocation()
+    console.log(location);
+    const from = location.state?.from?.pathname || '/';
 
     const { logIn, loginWithGoogle, loginWithGithub } = useContext(AuthContext)
 
@@ -32,7 +35,7 @@ const Login = () => {
                 const loggedUser = result.user
                 console.log(loggedUser);
                 form.reset()
-                navigate("/")
+                navigate(from , {replace: true})
                 setSuccess("Login is successfully completed")
             })
             .catch(error => {
@@ -45,7 +48,7 @@ const Login = () => {
             .then(result => {
                 const loggedGoogle = result.user
                 console.log(loggedGoogle);
-                navigate("/")
+                navigate(from , {replace: true})
                 setSuccess("Google Login is successfully completed")
             })
             .catch(error => {
@@ -57,7 +60,7 @@ const Login = () => {
         .then(result => {
             const loggedGithub = result.user
             console.log(loggedGithub);
-            navigate("/")
+            navigate(from , {replace: true})
             setSuccess("Github Login is successfully completed")
         })
         .catch(error => {
@@ -81,9 +84,9 @@ const Login = () => {
                     <p className='fw-bold text-danger text-center '>{error}</p>
                     <p className='fw-bold text-success text-center '>{success}</p>
                     <Button className='w-100 fw-bold border-0 py-2' style={{ color: 'white', backgroundColor: '#04B4AE' }} variant="primary" type="submit">
-                        Submit
+                        Log in
                     </Button>
-                        <h2 className='text-center pt-5'>Or</h2>
+                        <h2 className='text-center pt-3'>Or</h2>
                         <div className='text-center'>
                         <button onClick={handleGoogleLogIn} className='p-3 mx-4 fs-2 bg-white border-0'><FaGoogle></FaGoogle><span className='fs-5 ms-1'>oogle</span></button>
                         <button onClick={handleGitHubLogIn} className='p-3 fs-2 bg-white border-0'><FaGithub></FaGithub><span className='fs-5 ms-1'>ithub</span></button>
