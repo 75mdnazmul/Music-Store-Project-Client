@@ -4,8 +4,8 @@ import img from '../../../assets/faq.webp'
 const FAQ = () => {
     return (
         <div className='container'>
-            <div className="pt-5 text-center">
-                <h2 data-aos="fade-down-right" data-aos-duration="1000">Frequently Asked Questions</h2>
+            <div className="pt-5 text-center" data-aos="fade-down-right" data-aos-duration="1000">
+                <h2>Frequently Asked Questions</h2>
                 <p style={{ color: '#04B4AE', padding: "10px 0 0" }}>Find your answer from here</p>
             </div>
             <div className='row'>
