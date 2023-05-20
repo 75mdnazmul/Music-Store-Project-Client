@@ -10,6 +10,7 @@ import AllToys from "../Pages/allToys/allToys";
 import MyToys from "../Pages/MyToys/MyToys";
 import AddAToy from "../Pages/AddAToy/AddAToy";
 import PrivateRoutes from "./PrivateRoutes/PrivateRoutes";
+import SingleToyDetails from "../Pages/SingleToyDetails/SingleToyDetails";
 
   const router = createBrowserRouter([
     {
@@ -19,7 +20,8 @@ import PrivateRoutes from "./PrivateRoutes/PrivateRoutes";
       children: [
         {
           path: "/",
-          element: <Home></Home>
+          element: <Home></Home>,
+          loader:()=> fetch('http://localhost:7000/shopByCategory')
         },
         {
           path: "login",
@@ -44,6 +46,11 @@ import PrivateRoutes from "./PrivateRoutes/PrivateRoutes";
         {
           path: "addAToy",
           element: <PrivateRoutes><AddAToy></AddAToy></PrivateRoutes>
+        },
+        {
+          path: "singleToyDetails/:id",
+          element: <PrivateRoutes><SingleToyDetails></SingleToyDetails></PrivateRoutes>,
+          loader:({params})=> fetch(`http://localhost:7000/shopByCategory/${params.id}`)
         },
       ],
     },

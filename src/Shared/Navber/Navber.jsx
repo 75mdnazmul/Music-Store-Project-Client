@@ -27,7 +27,8 @@ const Navber = () => {
                         {
                             user && <>
                                 <ActiveLink className='text-decoration-none px-4' to="/myToys">My Toys</ActiveLink >
-                                <ActiveLink className='text-decoration-none px-4' to="/addAToy">Add A Toy</ActiveLink ></>
+                                <ActiveLink className='text-decoration-none px-4' to="/addAToy">Add A Toy</ActiveLink >
+                            </>
                         }
                         <ActiveLink className='text-decoration-none px-4' to="/blog">Blogs</ActiveLink >
                     </Nav>

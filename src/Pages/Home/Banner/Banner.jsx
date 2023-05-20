@@ -10,7 +10,7 @@ const Banner = () => {
                 <Carousel.Item interval={90000}>
                     <img
                         className="d-block w-100"
-                        style={{ height: '550px' }}
+                        style={{ height: '550px', filter:"brightness(0.7) contrast(1.2) saturate(0.8)"}}
                         src={image1}
                         alt="First slide"
                     />
@@ -23,7 +23,7 @@ const Banner = () => {
                 <Carousel.Item interval={50000}>
                     <img
                         className="d-block w-100"
-                        style={{ height: '550px' }}
+                        style={{ height: '550px', filter:"brightness(0.6) contrast(1.2) saturate(0.8)"}}
                         src={image2}
                         alt="Second slide"
                     />
@@ -36,7 +36,7 @@ const Banner = () => {
                 <Carousel.Item>
                     <img
                         className="d-block w-100 bg-none"
-                        style={{ height: '550px' }}
+                        style={{ height: '550px', filter:"brightness(0.7) contrast(1.2) saturate(0.8)"}}
                         src={image3}
                         alt="Third slide"
                     />
