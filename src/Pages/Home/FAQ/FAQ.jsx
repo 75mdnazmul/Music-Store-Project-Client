@@ -5,12 +5,14 @@ const FAQ = () => {
     return (
         <div className='container'>
             <div className="pt-5 text-center">
-                <h2>Frequently Asked Questions</h2>
+                <h2 data-aos="fade-down-right" data-aos-duration="1000">Frequently Asked Questions</h2>
                 <p style={{ color: '#04B4AE', padding: "10px 0 0" }}>Find your answer from here</p>
             </div>
             <div className='row'>
-                < img src={img} alt="" className='w-50 col-sm-12 col-lg-6' />
-                <div className='w-50 mt-5 col-sm-12  col-lg-6'>
+                < img src={img} alt="" className='w-50 col-sm-12 col-lg-6' data-aos="fade-right" 
+                    data-aos-duration="1000" />
+                <div className='w-50 mt-5 col-sm-12  col-lg-6' data-aos="fade-left"
+                    data-aos-duration="1000">
                     <Accordion>
                         <Accordion.Item eventKey="0">
                             <Accordion.Header>What is the age range of toys available in the store ?</Accordion.Header>

@@ -38,8 +38,8 @@ const ShopByCategory = () => {
     };
     return (
         <div className="container text-center">
-            <h2 className="pb-5">Shop by category</h2>
-            <Tabs selectedIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
+            <h2 className="pb-5" data-aos="fade-down-left" data-aos-duration="1000">Shop by category</h2>
+            <Tabs selectedIndex={tabIndex} onSelect={(index) => setTabIndex(index)} data-aos="zoom-in" data-aos-duration="2000">
                 <TabList>
                     <Tab>Percussion Toy</Tab>
                     <Tab>Electronic Music Toy</Tab>
