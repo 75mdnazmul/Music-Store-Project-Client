@@ -16,7 +16,6 @@ const AddAToy = () => {
         const description = form.description.value;
 
         const newToy = {name, photo, sellerName, sellerEmail, subCategory, price, rating, availableQuantity, description}
-        console.log(newToy);
 
         // Send data to the server
         fetch('http://localhost:7000/musicToy', {
@@ -47,7 +46,7 @@ const AddAToy = () => {
                 <div className="d-flex ">
                     <div>
                         <div className="py-2 ps-5">
-                            <label className="fw-bold pe-3" htmlFor="name">Name:</label>
+                            <label className="fw-bold pe-3" htmlFor="name">Toy Name:</label>
                             <input
 
                                 className="px-3 py-2 rounded "

@@ -12,6 +12,7 @@ import AddAToy from "../Pages/AddAToy/AddAToy";
 import PrivateRoutes from "./PrivateRoutes/PrivateRoutes";
 import SingleToyDetails from "../Pages/SingleToyDetails/SingleToyDetails";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
+import ViewDetails from "../Pages/ViewDetails/ViewDetails";
 
   const router = createBrowserRouter([
     {
@@ -53,6 +54,11 @@ import ErrorPage from "../Pages/ErrorPage/ErrorPage";
           path: "singleToyDetails/:id",
           element: <PrivateRoutes><SingleToyDetails></SingleToyDetails></PrivateRoutes>,
           loader:({params})=> fetch(`http://localhost:7000/shopByCategory/${params.id}`)
+        },
+        {
+          path: "musicToy/:id",
+          element: <PrivateRoutes><ViewDetails></ViewDetails></PrivateRoutes>,
+          loader:({params})=> fetch(`http://localhost:7000/musicToy/${params.id}`)
         },
       ],
     },
