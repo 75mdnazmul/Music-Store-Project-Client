@@ -24,12 +24,8 @@ const Navber = () => {
                     <Nav className="mx-auto my-2 my-lg-0" >
                         <ActiveLink className='text-decoration-none px-4' to="/">Home</ActiveLink >
                         <ActiveLink className='text-decoration-none px-4' to="/allToys">All Toys</ActiveLink >
-                        {
-                            user && <>
-                                <ActiveLink className='text-decoration-none px-4' to="/myToys">My Toys</ActiveLink >
-                                <ActiveLink className='text-decoration-none px-4' to="/addAToy">Add A Toy</ActiveLink >
-                            </>
-                        }
+                        <ActiveLink className='text-decoration-none px-4' to="/myToys">My Toys</ActiveLink >
+                        <ActiveLink className='text-decoration-none px-4' to="/addAToy">Add A Toy</ActiveLink >
                         <ActiveLink className='text-decoration-none px-4' to="/blog">Blogs</ActiveLink >
                     </Nav>
                     {

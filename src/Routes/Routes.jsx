@@ -38,7 +38,8 @@ import ErrorPage from "../Pages/ErrorPage/ErrorPage";
         },
         {
           path: "allToys",
-          element: <AllToys></AllToys>
+          element: <AllToys></AllToys>,
+          loader: ()=> fetch('http://localhost:7000/musicToy')
         },
         {
           path: "myToys",

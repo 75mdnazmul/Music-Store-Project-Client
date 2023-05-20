@@ -99,9 +99,9 @@ const AddAToy = () => {
                                 required
                             >
                                 <option value="" className="px-3 py-2 rounded ">Select a sub-category</option>
-                                <option value="Math Toys" className="px-3 py-2 rounded ">Percussion Music Toy</option>
-                                <option value="Language Toys">Electronic Music Toy</option>
-                                <option value="Science Toys">Old Music Toy</option>
+                                <option value="Percussion Music Toy" className="px-3 py-2 rounded ">Percussion Music Toy</option>
+                                <option value="Electronic Music Toy">Electronic Music Toy</option>
+                                <option value="Old Music Toy">Old Music Toy</option>
                             </select>
                         </div>
                         <div className="py-2 ps-5">
