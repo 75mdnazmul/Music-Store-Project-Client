@@ -1,5 +1,6 @@
 import Banner from "../Banner/Banner";
 import CustomerSaying from "../CustomerSaying/CustomerSaying";
+import FAQ from "../FAQ/FAQ";
 import Gallery from "../Gallery/Gallery";
 import ShopByCategory from "../ShopByCategory/ShopByCategory";
 
@@ -10,6 +11,7 @@ const Home = () => {
             <Gallery></Gallery>
             <ShopByCategory></ShopByCategory>
             <CustomerSaying></CustomerSaying>
+            <FAQ></FAQ>
         </div>
     );
 };

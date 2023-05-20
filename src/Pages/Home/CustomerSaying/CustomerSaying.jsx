@@ -3,8 +3,8 @@ import img2 from "../../../assets/customer2.webp"
 
 const CustomerSaying = () => {
     return (
-        <div className=" container text-center">
-            <div className="py-5 mt-5">
+        <div className=" container text-center my-5">
+            <div className="py-5 ">
                 <h2>Customer Saying</h2>
             </div>
             <div className="d-flex gap-3">
