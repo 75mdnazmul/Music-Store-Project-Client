@@ -1,4 +1,3 @@
-import React, { useContext, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import img from '../../assets/register.webp'
@@ -6,6 +5,7 @@ import { FaGithub, FaGoogle } from 'react-icons/fa';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProviders';
 import useTitleName from '../../Hooks/useTitleName';
+import { useContext, useState } from 'react';
 
 const Register = () => {
     useTitleName('Register page')
