@@ -4,16 +4,21 @@ import 'react-tabs/style/react-tabs.css';
 import { AuthContext } from "../../Providers/AuthProviders";
 import MyToysRow from "../MyToysRow/MyToysRow";
 import Swal from "sweetalert2";
+import useTitleName from "../../Hooks/useTitleName";
 
 const MyToys = () => {
+    useTitleName('My Toys page')
+
     const { user } = useContext(AuthContext)
     const [myToys, setMyToys] = useState([])
 
+    const url = `https://music-store-server-nz5vqtaax-75mdnazmul.vercel.app/myToys?email=${user.email}`
     useEffect(() => {
-        fetch(`http://localhost:7000/myToys?email=${user.email}`)
+        fetch(url)
             .then(res => res.json())
             .then(data => setMyToys(data))
-    }, [])
+    }, [url])
+    // My Toys Delete functionality
     const handleDelete = id => {
         Swal.fire({
             title: 'Are you sure?',
@@ -25,7 +30,7 @@ const MyToys = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:7000/myToys/${id}`, {
+                fetch(`https://music-store-server-nz5vqtaax-75mdnazmul.vercel.app/myToys/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -45,6 +50,43 @@ const MyToys = () => {
             }
         })
     }
+    // My Toys Update functionality
+    // const handleMyToyUpdate = id => {
+    //     Swal.fire({
+    //         title: 'Are you sure?',
+    //         text: "Do you want to Update Toy Data?",
+    //         icon: 'warning',
+    //         showCancelButton: true,
+    //         confirmButtonColor: '#3085d6',
+    //         cancelButtonColor: '#d33',
+    //         confirmButtonText: 'Yes, Update it!'
+    //     }).then((result) => {
+    //         if (result.isConfirmed) {
+    //             fetch(`https://music-store-server-nz5vqtaax-75mdnazmul.vercel.app/myToys/${id}`, {
+    //                 method: 'PATCH',
+    //                 headers : {
+    //                     'content-type' : 'application/json'
+    //                 },
+    //                 body: JSON.stringify({status: "Update"})
+    //             })
+    //                 .then(res => res.json())
+    //                 .then(data => {
+    //                     console.log(data);
+    //                     if (data.modifiedCount > 0) {
+    //                         Swal.fire(
+    //                             'Deleted!',
+    //                             'Your file has been deleted.',
+    //                             'success'
+    //                         )
+    //                         const remaining = myToys.filter(myToy => myToy._id !== id);
+    //                         // const updated = myToys.find(myToy => myToy._id === id);
+    //                         setMyToys(remaining)
+    //                     }
+    //                 })
+
+    //         }
+    //     })
+    // }
 
     return (
         <div className="container py-5 text-center">
@@ -71,6 +113,7 @@ const MyToys = () => {
                             key={myToy._id}
                             myToy={myToy}
                             handleDelete={handleDelete}
+                            // handleMyToyUpdate={handleMyToyUpdate}
                         ></MyToysRow>
                         )
                     }

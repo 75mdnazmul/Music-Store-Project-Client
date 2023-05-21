@@ -5,8 +5,11 @@ import img from '../../assets/register.webp'
 import { FaGithub, FaGoogle } from 'react-icons/fa';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProviders';
+import useTitleName from '../../Hooks/useTitleName';
 
 const Register = () => {
+    useTitleName('Register page')
+    
     const [error, setError] = useState("")
     const [success, setSuccess] = useState("")
     const navigate = useNavigate()

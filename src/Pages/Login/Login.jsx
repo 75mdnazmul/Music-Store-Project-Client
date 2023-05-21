@@ -5,8 +5,11 @@ import { FaGithub, FaGoogle } from 'react-icons/fa';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useContext, useState } from 'react';
 import { AuthContext } from '../../Providers/AuthProviders';
+import useTitleName from '../../Hooks/useTitleName';
 
 const Login = () => {
+    useTitleName('Login page')
+
     const [error, setError] = useState("")
     const [success, setSuccess] = useState("")
     const navigate = useNavigate();

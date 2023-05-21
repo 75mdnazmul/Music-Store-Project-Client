@@ -13,6 +13,7 @@ import PrivateRoutes from "./PrivateRoutes/PrivateRoutes";
 import SingleToyDetails from "../Pages/SingleToyDetails/SingleToyDetails";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import ViewDetails from "../Pages/ViewDetails/ViewDetails";
+import UpdateMyToys from "../Pages/UpdateMyToys/UpdateMyToys";
 
   const router = createBrowserRouter([
     {
@@ -23,7 +24,7 @@ import ViewDetails from "../Pages/ViewDetails/ViewDetails";
         {
           path: "/",
           element: <Home></Home>,
-          loader:()=> fetch('http://localhost:7000/shopByCategory')
+          loader:()=> fetch('https://music-store-server-nz5vqtaax-75mdnazmul.vercel.app/shopByCategory')
         },
         {
           path: "login",
@@ -40,7 +41,7 @@ import ViewDetails from "../Pages/ViewDetails/ViewDetails";
         {
           path: "allToys",
           element: <AllToys></AllToys>,
-          loader: ()=> fetch('http://localhost:7000/musicToy')
+          loader: ()=> fetch('https://music-store-server-nz5vqtaax-75mdnazmul.vercel.app/musicToy')
         },
         {
           path: "myToys",
@@ -53,12 +54,17 @@ import ViewDetails from "../Pages/ViewDetails/ViewDetails";
         {
           path: "singleToyDetails/:id",
           element: <PrivateRoutes><SingleToyDetails></SingleToyDetails></PrivateRoutes>,
-          loader:({params})=> fetch(`http://localhost:7000/shopByCategory/${params.id}`)
+          loader:({params})=> fetch(`https://music-store-server-nz5vqtaax-75mdnazmul.vercel.app/shopByCategory/${params.id}`)
         },
         {
           path: "musicToy/:id",
           element: <PrivateRoutes><ViewDetails></ViewDetails></PrivateRoutes>,
-          loader:({params})=> fetch(`http://localhost:7000/musicToy/${params.id}`)
+          loader:({params})=> fetch(`https://music-store-server-nz5vqtaax-75mdnazmul.vercel.app/musicToy/${params.id}`)
+        },
+        {
+          path: "updateMyToys/:id",
+          element: <UpdateMyToys></UpdateMyToys>,
+          loader:({params})=> fetch(`https://music-store-server-nz5vqtaax-75mdnazmul.vercel.app/updateMyToys/${params.id}`)
         },
       ],
     },

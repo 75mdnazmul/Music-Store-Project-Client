@@ -1,7 +1,10 @@
 import Accordion from 'react-bootstrap/Accordion';
 import img from '../../assets/blog.webp'
+import useTitleName from '../../Hooks/useTitleName';
 
 const Blog = () => {
+    useTitleName('Blog page')
+
     return (
         <div className='container'>
             <div className='row'>

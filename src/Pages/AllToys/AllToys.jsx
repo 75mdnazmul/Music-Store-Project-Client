@@ -4,10 +4,12 @@ import { Link, useLoaderData } from "react-router-dom";
 import 'react-tabs/style/react-tabs.css';
 import { ToastContainer, toast } from "react-toastify";
 import { AuthContext } from "../../Providers/AuthProviders";
+import useTitleName from "../../Hooks/useTitleName";
 
 const AllToys = () => {
     const musicToys = useLoaderData()
     const { user } = useContext(AuthContext)
+    useTitleName('All Toys page')
     
     // Cheack Logged In when click view details button
     const handleCheackLoggedIn = () => {

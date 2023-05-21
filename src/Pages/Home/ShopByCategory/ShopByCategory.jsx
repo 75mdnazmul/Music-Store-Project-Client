@@ -6,15 +6,18 @@ import 'react-tabs/style/react-tabs.css';
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import { AuthContext } from "../../../Providers/AuthProviders";
+import useTitleName from "../../../Hooks/useTitleName";
 
 
 const ShopByCategory = () => {
+    useTitleName('Shop By Category page')
+
     const { user } = useContext(AuthContext)
     const [tabIndex, setTabIndex] = useState(0);
     const [musicCategorys, setMusicCategorys] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:7000/shopByCategory')
+        fetch('https://music-store-server-nz5vqtaax-75mdnazmul.vercel.app/shopByCategory')
             .then(res => res.json())
             .then(data => setMusicCategorys(data))
     }, [])

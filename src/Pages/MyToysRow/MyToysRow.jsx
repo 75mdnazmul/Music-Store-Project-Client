@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 const MyToysRow = ({ myToy, handleDelete }) => {
 
@@ -16,7 +17,9 @@ const MyToysRow = ({ myToy, handleDelete }) => {
             <td>{rating}</td>
             <td>{availableQuantity}</td>
             <td>
-                <button className='px-3 mb-5 rounded-2 fw-bold border-0 py-2' style={{ color: 'white', backgroundColor: '#0e8a00' }} title="Click to Update">Update</button>
+                <Link to={`updateMyToys/${_id}`}>
+                    <button className='px-3 mb-5 rounded-2 fw-bold border-0 py-2' style={{ color: 'white', backgroundColor: '#0e8a00' }} title="Click to Update">Update</button>
+                </Link>
             </td>
             <td>
                 <button onClick={() => handleDelete(_id)} className='px-3 mb-5 rounded-2 fw-bold border-0 py-2' style={{ color: 'white', backgroundColor: '#e90000' }} title="Click to Delete">Delete</button>

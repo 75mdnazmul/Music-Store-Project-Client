@@ -1,7 +1,10 @@
 import { Button } from "react-bootstrap";
 import Swal from 'sweetalert2'
+import useTitleName from "../../Hooks/useTitleName";
 
 const AddAToy = () => {
+    useTitleName('Add A Toy page')
+
     const handleAddToy = (e) => {
         e.preventDefault();
         const form = e.target;
@@ -20,7 +23,7 @@ const AddAToy = () => {
         console.log(newToy);
 
         // Send data to the server
-        fetch('http://localhost:7000/myToys', {
+        fetch('https://music-store-server-nz5vqtaax-75mdnazmul.vercel.app/myToys', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
