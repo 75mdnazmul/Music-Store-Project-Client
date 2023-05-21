@@ -27,14 +27,14 @@ const AllToys = () => {
     return (
         <div className="container py-5 text-center">
             <h2 className="text-center pb-4">AllToys</h2>
-            <Table striped bordered hover size="sm">
+            <Table striped bordered hover size="sm" className="fs-5">
                 <thead>
                     <tr>
                         <th>Seller Name</th>
                         <th>Sub-Category</th>
                         <th>Price</th>
                         <th>Available Quantity</th>
-                        <th>Details Info</th>
+                        <th>Details Info Button</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -42,9 +42,9 @@ const AllToys = () => {
                     {
                         musicToys.map(musicToy =>
                             <tr key={musicToy._id} className="align-middle">
-                                <td>{musicToy.sellerName}</td>
+                                <td>{musicToy?.sellerName}</td>
                                 <td>{musicToy.subCategory}</td>
-                                <td>{musicToy.price}</td>
+                                <td>{musicToy.price}$</td>
                                 <td>{musicToy.availableQuantity}</td>
                                 <td>
                                     <Link to={`/musicToy/${musicToy._id}`}>

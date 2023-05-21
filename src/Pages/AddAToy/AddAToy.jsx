@@ -17,8 +17,10 @@ const AddAToy = () => {
 
         const newToy = {name, photo, sellerName, sellerEmail, subCategory, price, rating, availableQuantity, description}
 
+        console.log(newToy);
+
         // Send data to the server
-        fetch('http://localhost:7000/musicToy', {
+        fetch('http://localhost:7000/myToys', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
